@@ -11,9 +11,9 @@ First, Please print the marker below(or just view it on the phone).
 [Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png)
 
 ### Basic Demo
-<img src="./images/simpledemo.png" alt="Simple demo" width="640px"> 
+<img src="./images/basicdemo.png" alt="Basic Demo" width="640px"> 
 
-- [Full function Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/basic/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/basic/)
+- [Basic Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/basic/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/basic/)
 - [Basic Demo On OpenProcessing](https://openprocessing.org/sketch/1891727)
 
 ### Other demos
