@@ -10,11 +10,11 @@ Now, the latest version is `0.5.0`(prototype release).
 First, Please print the marker below(or just view it on the phone).  
 [Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png)
 
-### Simple Demo
+### Basic Demo
 <img src="./images/simpledemo.png" alt="Simple demo" width="640px"> 
 
-- [Full function Demo On GitHub](https://tetunori.github.io/BMWalker.js/sample/fullFunction/index.html), [Source code On GitHub](https://github.com/tetunori/BMWalker.js/tree/main/sample/fullFunction)
-- [Full function Demo On OpenProcessing](https://openprocessing.org/sketch/1543496)
+- [Full function Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/basic/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/basic/)
+- [Basic Demo On OpenProcessing](https://openprocessing.org/sketch/1891727)
 
 ### Other demos
 <details><summary>CLICK ME to show other demos</summary>
