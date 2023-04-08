@@ -21,15 +21,23 @@ const createARCanvas = (w, h, renderer = P2D) => {
   console.log('createARCanvas');
   const cvs = createCanvas(w, h, renderer);
 
-  // For WebAR
   cvs.id('p5Canvas');
   cvs.parent('a-assets');
 
+  let arW, arH; 
+  const scaleUnit = 3;
+  if( arW < arH ){
+    arW = scaleUnit * w / h;
+    arH = scaleUnit;
+  }else{
+    arW = scaleUnit;
+    arH = scaleUnit * h / w;
+  }
   const atts = [
     ['position', '0 0 0'],
     ['rotation', '-90 0 0'],
-    ['width', '3'],
-    ['height', '3'],
+    ['width', String(arW)],
+    ['height', String(arH)],
     ['material', 'src: #p5Canvas; transparent: true; opacity: 1.0;'],
   ];
   const plane = document.createElement('a-plane');
@@ -46,7 +54,6 @@ const replaceARDraw = () => {
   draw = ( () => {
     oldDraw();
     
-    // For WebAR
     const plane = document.querySelector('a-plane');
     const material = plane.getObject3D('mesh').material;
     if (material.map) {
