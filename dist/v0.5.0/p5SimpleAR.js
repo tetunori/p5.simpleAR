@@ -17,7 +17,7 @@ script.onload = (() => {
   });
 document.head.appendChild(script);
 
-const createARCanvas = (w, h, renderer = P2D) => {
+const createARCanvas = (w, h, renderer = P2D, params = {scale:3}) => {
   console.log('createARCanvas');
   const cvs = createCanvas(w, h, renderer);
 
@@ -25,7 +25,7 @@ const createARCanvas = (w, h, renderer = P2D) => {
   cvs.parent('a-assets');
 
   let arW, arH; 
-  const scaleUnit = 3;
+  const scaleUnit = params.scale;
   if( arW < arH ){
     arW = scaleUnit * w / h;
     arH = scaleUnit;
