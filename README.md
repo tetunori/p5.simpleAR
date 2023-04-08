@@ -78,7 +78,7 @@ So, basically, this has same parameters as `createCanvas`.
 > **Warning**  
 > AR function does not work well in `WEBGL` mode...
 
-`params` is original `Object` parameters for p5.simpleAR.  
+`params` is original `Object` that has parameters for p5.simpleAR.  
 Members:
 |  name  |  note  |
 | ---- | ---- |
