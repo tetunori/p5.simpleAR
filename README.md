@@ -8,6 +8,8 @@ Now, the latest version is `0.5.0`(prototype release).
 
 ## Demos
 First, Please print the marker below(or just view it on the phone).  
+<img src="./images/6.png" alt="Maker" width="226px"> 
+
 [Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png)
 
 ### Basic Demo
@@ -18,9 +20,25 @@ First, Please print the marker below(or just view it on the phone).
 
 ### Other demos
 <details><summary>CLICK ME to show other demos</summary>
-<p>
-2, 3例のデモ。
-</p>
+
+#### Standard samples
+- [221105a on WebAR](https://openprocessing.org/sketch/1891678)  
+<img src="./images/221105a.png" alt="Standard samples 1" width="640px"><br>
+Original sketch by [@takawo](https://twitter.com/takawo)  
+
+- [Nagumo on WebAR](https://openprocessing.org/sketch/1891684)  
+<img src="./images/Nagumo.png" alt="Standard samples 2" width="640px"><br>
+Original sketch by [@deconbatch](https://twitter.com/deconbatch)  
+
+#### Transparent background
+- [Generativemasks on WebAR](https://openprocessing.org/sketch/1891862)  
+<img src="./images/Generativemasks.png" alt="Transparent background Demo" width="640px"><br>
+[Generativemasks](https://generativemasks.io/) by [@takawo](https://twitter.com/takawo), [Garg library](https://jp.deconbatch.com/2021/10/garg.html) by [@deconbatch](https://twitter.com/deconbatch)
+
+#### Non-square canvas(800*80)
+- [Game of Life on WebAR](https://openprocessing.org/sketch/1891716)  
+<img src="./images/gol.png" alt="Non-square canvas Demo" width="640px">
+
 </details>
 
 # Usage
@@ -45,7 +63,7 @@ OK, done.
 Then, your sketch will be shown on the [AR Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png).
 
 ## Environment 
-This function deeply depends on AR.js. Please see the [requirement](https://ar-js-org.github.io/AR.js-Docs/#requirements) of the library. 
+This function deeply depends on **AR.js**. Please see the [requirement](https://ar-js-org.github.io/AR.js-Docs/#requirements) of the library. 
 
 # API Specification
 <details><summary>CLICK ME</summary>
@@ -53,12 +71,24 @@ This function deeply depends on AR.js. Please see the [requirement](https://ar-j
 
 ## createARCanvas
 ```javascript
-createARCanvas(w, h, [renderer])
+createARCanvas(w, h, [renderer], [params])
 ```
 Replace `createCanvas` in `setup` with this function.  
-So, this has same parameters as `createCanvas`.  
+So, basically, this has same parameters as `createCanvas`.  
 > **Warning**  
 > AR function does not work well in `WEBGL` mode...
+
+`params` is original `Object` parameters for p5.simpleAR.  
+Members:
+|  name  |  note  |
+| ---- | ---- |
+|  `scale`   | `Number`: Scale of sketch. Marker size is defined as `1`. Default value is `3`. |
+
+```javascript
+// Call like this
+// createCanvas(100, 200);
+createARCanvas(100, 200, P2D, {scale: 5});
+```
 
 </p>
 </details>
