@@ -28,6 +28,11 @@ First, Please print the marker below(or just view it on the phone).
 ```html 
 <script src="https://tetunori.github.io/p5.simpleAR/dist/v0.5.0/p5SimpleAR.js"></script>
 ```
+<details><summary>In case of OpenProcessing</summary>
+<img src="./images/openprocessing-addlib.png" alt="Add library in OpenProcessing" width="480px"> 
+</details>
+
+
 ## Basic Usage
 Just replace `createCanvas` in `setup` with `createARCanvas`.
 
