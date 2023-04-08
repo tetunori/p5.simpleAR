@@ -1,16 +1,13 @@
-# p5.simpleAR
-Simple AR supplement for p5.js 
+# Overview 👓
 
-# Description 👓
-
-**p5.simpleAR** is a simple JavaScript file(mini-library) to easily convert existing sketches into AR.
-mp4埋め込みたい
+**p5.simpleAR** is a simple JavaScript supplement(mini-library) file to easily convert existing sketches into AR for PCs and smart devices.  
+mp4埋め込みたい🌟  
 [HQ movie.](https://www.youtube.com/watch?v=?????)
 
 Now, the latest version is `0.5.0`(prototype release).  
 
 ## Demos
-Please print the marker below(or just view it on the phone).  
+First, Please print the marker below(or just view it on the phone).  
 [Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png)
 
 ### Simple Demo
@@ -22,7 +19,7 @@ Please print the marker below(or just view it on the phone).
 ### Other demos
 <details><summary>CLICK ME to show other demos</summary>
 <p>
-
+2, 3例のデモ。
 </p>
 </details>
 
@@ -39,8 +36,11 @@ createCanvas(100, 100);
 ->
 createARCanvas(100, 100);
 ```
+OK, done.  
+Then, your sketch will be shown on the [AR Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png).
 
-Then, your sketch will be shown on the AR marker.
+## Environment 
+This function deeply depends on AR.js. Please see the [requirement](https://ar-js-org.github.io/AR.js-Docs/#requirements) of the library. 
 
 # API Specification
 <details><summary>CLICK ME</summary>
@@ -50,13 +50,23 @@ Then, your sketch will be shown on the AR marker.
 ```javascript
 createARCanvas(w, h, [renderer])
 ```
-Same as `createCanvas`. But AR function does not work well in `WEBGL` mode...
+Replace `createCanvas` in `setup` with this function.  
+So, this has same parameters as `createCanvas`.  
+> **Warning**  
+> AR function does not work well in `WEBGL` mode...
 
 </p>
 </details>
 
+# ToDo
+- Specify some parameters on AR setting
+- Pinch to zoom in and out
+- Support multiple types of markers
+- Use specified image as a marker (possible?)
+- Improve Performance 
+
 # License
-MIT license 
+MIT license  
 Copyright (c) 2023 [Tetsunori Nakayama](https://twitter.com/tetunori_lego).
 
 # Author
