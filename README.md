@@ -23,6 +23,12 @@ https://user-images.githubusercontent.com/14086390/230766242-8c15c1ae-b734-4790-
 <details><summary>CLICK ME to show other demos</summary>
 
 #### Standard samples
+##### [Garg with frame on WebAR](https://openprocessing.org/sketch/1891866)  
+
+
+
+[Garg library](https://jp.deconbatch.com/2021/10/garg.html) by [@deconbatch](https://twitter.com/deconbatch)
+
 ##### [221105a on WebAR](https://openprocessing.org/sketch/1891678)  
 
 https://user-images.githubusercontent.com/14086390/230766268-0836fc4d-a050-4c94-8485-4c8a0a1a8cb2.mp4
@@ -90,7 +96,7 @@ Properties:
 |  name  |  note  |
 | ---- | ---- |
 |  `scale`   | `Number`: Scale of the sketch. Marker size is defined as `1`. Default value is `3`. |
-|  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0`() and `1.0`().Default value is `1.0`. |
+|  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0` and `1.0`.Default value is `1.0`. |
 
 ```javascript
 // Call like this
