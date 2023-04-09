@@ -67,7 +67,7 @@ createCanvas(100, 100);
 createARCanvas(100, 100);
 ```
 OK, done.  
-Then, your sketch will be shown on the [AR Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png).
+Then, your sketch will be shown on the [AR Marker](https://tetunori.github.io/p5.simpleAR/images/6wFrame.png).
 
 ## Environment 
 This function deeply depends on **AR.js**. Please see the [requirement](https://ar-js-org.github.io/AR.js-Docs/#requirements) of the library. 
@@ -89,7 +89,10 @@ So, basically, this has same parameters as `createCanvas`.
 Members:
 |  name  |  note  |
 | ---- | ---- |
-|  `scale`   | `Number`: Scale of sketch. Marker size is defined as `1`. Default value is `3`. |
+|  `scale`   | `Number`: Scale of the sketch. Marker size is defined as `1`. Default value is `3`. |
+|  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0`() and `1.0`().Default value is `1.0`. |
+> **Note**  
+> Make sure that all parameters are set.
 
 ```javascript
 // Call like this
