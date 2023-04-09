@@ -21,6 +21,14 @@ const createARCanvas = (w, h, renderer = P2D, params = {scale:3, opacity:1.0}) =
   console.log('createARCanvas');
   const cvs = createCanvas(w, h, renderer);
 
+  if(!params.hasOwnProperty('scale')){
+    params.scale = 3;
+  }
+
+  if(!params.hasOwnProperty('opacity')){
+    params.opacity = 1.0;
+  }
+
   cvs.id('p5Canvas');
   cvs.parent('a-assets');
 

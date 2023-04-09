@@ -91,8 +91,6 @@ Members:
 | ---- | ---- |
 |  `scale`   | `Number`: Scale of the sketch. Marker size is defined as `1`. Default value is `3`. |
 |  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0`() and `1.0`().Default value is `1.0`. |
-> **Note**  
-> Make sure that all parameters are set.
 
 ```javascript
 // Call like this
