@@ -1,8 +1,8 @@
 # Overview 👓
 
 **p5.simpleAR** is a simple JavaScript supplement(mini-library) file to easily convert existing sketches into AR for PCs and smart devices.  
-mp4埋め込みたい🌟  
-[HQ movie.](https://youtu.be/I2mgpdLRX3g)
+<a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="KeyVisual" width="640px"></a>  
+[Concept movie.](https://youtu.be/I2mgpdLRX3g)
 
 Now, the latest version is `0.5.0`(prototype release).  
 
