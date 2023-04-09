@@ -17,7 +17,7 @@ script.onload = (() => {
   });
 document.head.appendChild(script);
 
-const createARCanvas = (w, h, renderer = P2D, params = {scale:3}) => {
+const createARCanvas = (w, h, renderer = P2D, params = {scale:3, opacity:1.0}) => {
   console.log('createARCanvas');
   const cvs = createCanvas(w, h, renderer);
 
@@ -38,7 +38,7 @@ const createARCanvas = (w, h, renderer = P2D, params = {scale:3}) => {
     ['rotation', '-90 0 0'],
     ['width', String(arW)],
     ['height', String(arH)],
-    ['material', 'src: #p5Canvas; transparent: true; opacity: 1.0;'],
+    ['material', 'src: #p5Canvas; transparent: true; opacity: ' + String(params.opacity) + ';'],
   ];
   const plane = document.createElement('a-plane');
   atts.forEach((att) => plane.setAttribute(att[0], att[1]));
