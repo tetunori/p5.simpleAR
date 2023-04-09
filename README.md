@@ -86,7 +86,7 @@ So, basically, this has same parameters as `createCanvas`.
 > AR function does not work well in `WEBGL` mode...
 
 `params` is original `Object` parameters for p5.simpleAR.  
-Members:
+Properties:
 |  name  |  note  |
 | ---- | ---- |
 |  `scale`   | `Number`: Scale of the sketch. Marker size is defined as `1`. Default value is `3`. |
