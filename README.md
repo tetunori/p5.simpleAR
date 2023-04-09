@@ -13,11 +13,8 @@ First, Please print the marker below(or just view it on the phone).
 [Marker](https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection/blob/master/3x3/6.png)
 
 ### Basic Demo
-<img src="./im
 
 https://user-images.githubusercontent.com/14086390/230766242-8c15c1ae-b734-4790-9f74-b3de3d875d8f.mp4
-
-ages/basicdemo.png" alt="Basic Demo" width="640px"> 
 
 - [Basic Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/basic/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/basic/)
 - [Basic Demo On OpenProcessing](https://openprocessing.org/sketch/1891727)
@@ -26,31 +23,28 @@ ages/basicdemo.png" alt="Basic Demo" width="640px">
 <details><summary>CLICK ME to show other demos</summary>
 
 #### Standard samples
-- [221105a on WebAR](https://openprocessing.org/sketch/1891678)  
+##### [221105a on WebAR](https://openprocessing.org/sketch/1891678)  
+
 https://user-images.githubusercontent.com/14086390/230766268-0836fc4d-a050-4c94-8485-4c8a0a1a8cb2.mp4
 
-<img src="./images/221105a.png" alt="Standard samples 1" width="640px"><br>
 Original sketch by [@takawo](https://twitter.com/takawo)  
 
-- [Nagumo on WebAR](https://openprocessing.org/sketch/1891684)  
+##### [Nagumo on WebAR](https://openprocessing.org/sketch/1891684)  
+
 https://user-images.githubusercontent.com/14086390/230766284-756c01a2-37f0-4f53-955d-d511d16ac827.mp4
 
-<img src="./images/Nagumo.png" alt="Standard samples 2" width="640px"><br>
 Original sketch by [@deconbatch](https://twitter.com/deconbatch)  
 
 #### Transparent background
-- [Generativemasks on WebAR](https://openprocessing.org/sketch/1891862)  
+##### [Generativemasks on WebAR](https://openprocessing.org/sketch/1891862)
+
 <img src="./images/Generativemasks.png" alt="Transparent background Demo" width="640px"><br>
 [Generativemasks](https://generativemasks.io/) by [@takawo](https://twitter.com/takawo), [Garg library](https://jp.deconbatch.com/2021/10/garg.html) by [@deconbatch](https://twitter.com/deconbatch)
 
 #### Non-square canvas(800*80)
-- [Game of Life on WebAR](https://openprocessing.org/sketch/1891716)  
-
+##### [Game of Life on WebAR](https://openprocessing.org/sketch/1891716)  
 
 https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-bdb7-07e176d5e0d0.mp4
-
-
-<img src="./images/gol.png" alt="Non-square canvas Demo" width="640px">
 
 </details>
 
