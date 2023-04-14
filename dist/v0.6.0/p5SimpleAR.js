@@ -8,7 +8,7 @@ aFrameScript.onload = (() => {
       document.body.innerHTML += `
     <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
       <a-assets id="a-assets"></a-assets>
-      <a-marker type="barcode" value="6" registerevents></a-marker>
+      <a-marker id="a-marker" type="barcode" value="6" registerevents></a-marker>
       <a-entity camera></a-entity>
     </a-scene>
       `
@@ -17,7 +17,7 @@ aFrameScript.onload = (() => {
   });
 document.head.appendChild(aFrameScript);
 
-const createARCanvas = (w, h, renderer = P2D, params = {scale:3, opacity:1.0}) => {
+const createARCanvas = (w, h, renderer = P2D, params = {scale:3, opacity:1.0, markerId:6 }) => {
   // console.log('createARCanvas');
   const cvs = createCanvas(w, h, renderer);
 
@@ -28,6 +28,12 @@ const createARCanvas = (w, h, renderer = P2D, params = {scale:3, opacity:1.0}) =
   if(!params.hasOwnProperty('opacity')){
     params.opacity = 1.0;
   }
+  params.markerId = constrain(params.markerId, 0.0, 1.0);
+
+  if(!params.hasOwnProperty('markerId')){
+    params.markerId = 6;
+  }
+  params.markerId = constrain(params.markerId, 0, 63);
 
   cvs.id('p5Canvas');
   cvs.parent('a-assets');
@@ -52,7 +58,10 @@ const createARCanvas = (w, h, renderer = P2D, params = {scale:3, opacity:1.0}) =
     const plane = document.createElement('a-plane');
     plane.id = 'p5SimpleAR-plane';
     atts.forEach((att) => plane.setAttribute(att[0], att[1]));
-    document.querySelector('a-marker').appendChild(plane);
+    const markerElm = document.querySelector('a-marker');
+    markerElm.appendChild(plane);
+
+    markerElm.setAttribute('value', String(params.markerId));
 
     replaceARDraw();
   }
