@@ -63,9 +63,8 @@ https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-
 <img src="./images/openprocessing-addlib.png" alt="Add library in OpenProcessing" width="480px"> 
 </details>
 
-
 ## Basic Usage
-Just replace `createCanvas` in `setup` with `createARCanvas`.
+Just replace `createCanvas` with `createARCanvas`.
 
 ```javascript
 createCanvas(100, 100);
@@ -82,27 +81,71 @@ This function deeply depends on **AR.js**. Please see the [requirement](https://
 <details><summary>CLICK ME</summary>
 <p>
 
+## Markers
+We can choose markers from the 64 images below.  
+[AR Markers](https://github.com/tetunori/p5.simpleAR/tree/main/markers/) 
+
+|  0  |  1  |  ...  |  63  |
+| ---- | ---- | ---- | ---- |
+|  <img src="./images/0wFrame.png" alt="Maker" width="113px"> | <img src="./images/1wFrame.png" alt="Maker" width="113px"> |  ...  |  <img src="./images/63wFrame.png" alt="Maker" width="113px">  |
+
 ## createARCanvas
 ```javascript
 createARCanvas(w, h, [renderer], [params])
 ```
-Replace `createCanvas` in `setup` with this function.  
-So, basically, this has same parameters as `createCanvas`.  
+Replace `createCanvas` with this function.  
+So, basically, this API has same parameters as `createCanvas`.  
 > **Warning**  
 > AR function does not work well in `WEBGL` mode...
 
-`params` is original `Object` parameters for p5.simpleAR.  
-Properties:
+`params` is original `Object` parameters for `p5.simpleAR`.  
+### Properties:
 |  name  |  note  |
 | ---- | ---- |
-|  `scale`   | `Number`: Scale of the sketch. Marker size is defined as `1`. Default value is `3`. |
+|  `scale`   | `Number`: Scale of the sketch. Marker(3x3 dots) size is defined as `1`. Default value is `3`. |
 |  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0` and `1.0`.Default value is `1.0`. |
+|  `markerId`   | `Number`: Id of the marker data. Input a integer value between `0` and `63`.Default value is `6`. |
 
 ```javascript
 // Call like this
 // createCanvas(100, 200);
-createARCanvas(100, 200, P2D, {scale: 5});
+createARCanvas(100, 200, P2D, { scale: 5, opacity: 0.7, markerId: 1 });
 ```
+
+### Sample
+- [createARCanvas Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/parameters/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/parameters/)
+- [createARCanvas Demo On OpenProcessing](https://openprocessing.org/sketch/1898838)
+
+## createARGraphics
+```javascript
+createARGraphics(w, h, [renderer], [params])
+```
+Replace `createGraphics` with this function.  
+So, basically, this API has same parameters as `createGraphics`.  
+By using this API, You can handle multiple markers. 
+> **Warning**  
+> AR function does not work well in `WEBGL` mode...
+
+> **Warning**  
+> `createARGraphics` and `createARCanvas` cannot coexist.
+
+`params` is original `Object` parameters for `p5.simpleAR`.  
+### Properties:
+|  name  |  note  |
+| ---- | ---- |
+|  `scale`   | `Number`: Scale of the sketch. Marker(3x3 dots) size is defined as `1`. Default value is `3`. |
+|  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0` and `1.0`.Default value is `1.0`. |
+|  `markerId`   | `Number`: Id of the marker data. Input a integer value between `0` and `63`.Default value is `6`. Be sure to set unique id for each graphics. |
+
+```javascript
+// Call like this
+// createGraphics(100, 200);
+createARGraphics(100, 200, P2D, { scale: 5, opacity: 0.7, markerId: 1 });
+```
+
+### Sample
+- [createARGraphics Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/createARGraphics/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/createARGraphics/)
+- [createARGraphics Demo On OpenProcessing](https://openprocessing.org/sketch/1898840)
 
 </p>
 </details>
