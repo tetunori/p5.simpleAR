@@ -115,14 +115,6 @@ const p5SimpleARCreateARCore = (w, h, cvs, params = { scale: 3, opacity: 1.0, ma
 
 const p5SimpleARMarkerVisible = [];
 
-function p5SimpleARMarkerFound(markerId = undefined) {
-  // no op
-}
-
-function p5SimpleARMarkerLost(markerId = undefined) {
-  // no op
-}
-
 const p5SimpleARGetMarkerProperty = (markerId = 6) => {
   const returnObj = {
     markerId: markerId,
@@ -176,3 +168,13 @@ const p5SimpleARReplaceARDraw = () => {
     });
   };
 };
+
+// For overwrite
+function p5SimpleARMarkerFound(markerId = undefined) {
+  // no op
+}
+
+// For overwrite
+function p5SimpleARMarkerLost(markerId = undefined) {
+  // no op
+}
