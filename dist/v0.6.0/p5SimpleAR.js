@@ -83,23 +83,73 @@ const p5SimpleARCreateARCore = (w, h, cvs, params = { scale: 3, opacity: 1.0, ma
       ['id', 'a-marker' + String(params.markerId)],
       ['type', 'barcode'],
       ['value', String(params.markerId)],
+      ['emitevents', 'true'],
       ['registerevents', ''],
     ];
     markerAtts.forEach((markerAtt) => marker.setAttribute(markerAtt[0], markerAtt[1]));
     marker.appendChild(plane);
     scene.appendChild(marker);
 
+    p5SimpleARMarkerVisible.push({ markerId: params.markerId, visible: false });
+    marker.addEventListener('markerFound', function () {
+      p5SimpleARMarkerVisible.forEach((v, i) => {
+        if (v.markerId === params.markerId) {
+          p5SimpleARMarkerVisible[i].visible = true;
+          p5SimpleARMarkerFound(v.markerId);
+        }
+      });
+    });
+    marker.addEventListener('markerLost', function () {
+      // console.log('markerLost!', marker);
+      p5SimpleARMarkerVisible.forEach((v, i) => {
+        if (v.markerId === params.markerId) {
+          p5SimpleARMarkerVisible[i].visible = false;
+          p5SimpleARMarkerLost(v.markerId);
+        }
+      });
+    });
+
     p5SimpleARReplaceARDraw();
   }
 };
 
+const p5SimpleARMarkerVisible = [];
+
+function p5SimpleARMarkerFound(markerId = undefined) {
+  // no op
+}
+
+function p5SimpleARMarkerLost(markerId = undefined) {
+  // no op
+}
+
 const p5SimpleARGetMarkerProperty = (markerId = 6) => {
   const returnObj = {
     markerId: markerId,
+    markerVisible: false,
+    rotation: undefined,
+    position: undefined,
   };
 
-  console.log(document.querySelector('#a-marker' + String(markerId)).getAttribute("rotation"))
-  console.log(document.querySelector('#a-marker' + String(markerId)).getAttribute("position"))
+  p5SimpleARMarkerVisible.forEach((v) => {
+    if (v.markerId === markerId) {
+      returnObj.markerVisible = v.visible;
+    }
+  });
+
+  const rotObj = document.querySelector('#a-marker' + String(markerId)).getAttribute('rotation');
+  returnObj.rotation = {
+    x: rotObj.x,
+    y: rotObj.y,
+    z: rotObj.z,
+  };
+
+  const posObj = document.querySelector('#a-marker' + String(markerId)).getAttribute('position');
+  returnObj.position = {
+    x: posObj.x,
+    y: posObj.y,
+    z: posObj.z,
+  };
 
   return returnObj;
 };
@@ -116,10 +166,6 @@ const p5SimpleARReplaceARDraw = () => {
   const oldDraw = draw;
   draw = () => {
     oldDraw();
-    // console.log(document.querySelector('a-marker'))
-    // console.log(document.querySelector('a-marker').getAttribute("rotation"))
-    // console.log(document.querySelector('a-marker').getAttribute("material"))
-    // console.log(document.querySelector('a-marker').getAttribute("position"))
 
     const planes = document.querySelectorAll('a-plane');
     planes.forEach((plane) => {
