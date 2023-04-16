@@ -156,7 +156,7 @@ const p5SimpleARReplaceARDraw = () => {
   p5SimpleARDrawReplaced = true;
 
   // For Openprocessing
-  const targetElm = querySelector('body.hasFrameBorder'); 
+  const targetElm = document.querySelector('body.hasFrameBorder'); 
   if (targetElm.style.display === 'flex') {
     targetElm.style.display = '';
   }
