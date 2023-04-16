@@ -256,14 +256,18 @@ function p5SimpleARMarkerLost(markerId) {
 </p>
 </details>
 
-# ToDo  
+# Tips✍
+## Improve Performance🚀
+- Use smaller canvas for smart phone. Around 240 is the recommended value for width/height. 
+
+# ToDo✅
 - [x] Specify some parameters on AR setting
 - [ ] Pinch to zoom in and out
 - [x] Support multiple types of markers
 - [ ] Use specified image as a marker (possible?)
 - [x] Improve Performance 
 
-# License
+# License⚖
 MIT license  
 Copyright (c) 2023 [Tetsunori Nakayama](https://twitter.com/tetunori_lego).
 
