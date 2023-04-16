@@ -1,4 +1,4 @@
-const W = 720;
+const W = 240;
 
 function setup() {
   createARCanvas(W, W, P2D, { scale: 2, opacity: 0.7, markerId: 1 });

@@ -113,8 +113,12 @@ createARCanvas(100, 200, P2D, { scale: 5, opacity: 0.7, markerId: 1 });
 ```
 
 ### Sample
-- [createARCanvas Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/parameters/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/parameters/)
-- [createARCanvas Demo On OpenProcessing](https://openprocessing.org/sketch/1898838)
+- createARCanvas Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/parameters/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/parameters/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1898838)
+- つぶやきProcessing Demo
+  - [Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/つぶやき/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/つぶやき/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899101)
 
 ## createARGraphics
 ```javascript
@@ -144,18 +148,71 @@ createARGraphics(100, 200, P2D, { scale: 5, opacity: 0.7, markerId: 1 });
 ```
 
 ### Sample
-- [createARGraphics Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/createARGraphics/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/createARGraphics/)
-- [createARGraphics Demo On OpenProcessing](https://openprocessing.org/sketch/1898840)
+- createARGraphics Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/createARGraphics/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/createARGraphics/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1898840)
+
+## p5SimpleARGetMarkerProperty
+```javascript
+p5SimpleARGetMarkerProperty([markerId])
+```
+Return a `Object` that has some information on the specified marker.
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the marker data. If you do not specify this, default value `6` will be set. |
+
+### Return Object Property:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the specified marker data. |
+|  `markerVisible`   | `Boolean`: Whether the specified marker is visible or not. |
+|  `rotation`   | `Object`: Rotation information of the marker. Value format(radians/degrees) depends on the p5.js angle-mode setting(see [angleMode()](https://p5js.org/reference/#/p5/angleMode)). <br> **Property:**<br>x: Pitch, rotation about the X-axis.<br>y: Yaw, rotation about the Y-axis.	<br>z: Roll, rotation about the Z-axis. |
+|  `position`   | `Object`: Position information of the marker. This uses a right-handed coordinate system where the negative Z axis extends into the screen. <br> **Property:**<br>x: Negative X axis extends left. Positive X Axis extends right.<br>y: Negative Y axis extends down. Positive Y Axis extends up.	<br>z: Negative Z axis extends in. Positive Z Axis extends out. |
+
+```javascript
+const markerProps = p5SimpleARGetMarkerProperty(6);
+```
+Received `Object` consists of objects as below.
+
+```javascript
+// Return value of p5SimpleARGetMarkerProperty()
+{
+  markerId: 6,
+  markerVisible: true,
+  rotation: {
+    x: 105.35504555645193, 
+    y: -11.201540264006956, 
+    z: 14.797999140808324,
+  },
+  position: {
+    x: -0.2322715400514963, 
+    y: 0.956252183544887, 
+    z: -12.228084209054696,
+  }
+}
+```
+
+### Sample
+- Simple GetMarkerProperty Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/getMarkerProperty/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/getMarkerProperty/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899122)
+
+- Position/Rotation Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/propPosRot/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/propPosRot/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899120)
+
 
 </p>
 </details>
 
-# ToDo
-- Specify some parameters on AR setting
-- Pinch to zoom in and out
-- Support multiple types of markers
-- Use specified image as a marker (possible?)
-- Improve Performance 
+# ToDo  
+- [x] Specify some parameters on AR setting
+- [ ] Pinch to zoom in and out
+- [x] Support multiple types of markers
+- [ ] Use specified image as a marker (possible?)
+- [x] Improve Performance 
 
 # License
 MIT license  
