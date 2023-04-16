@@ -4,13 +4,13 @@
 <a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="KeyVisual" width="640px"></a>  
 [Concept movie.](https://youtu.be/I2mgpdLRX3g)
 
-Now, the latest version is `0.5.0`(prototype release).  
+Now, the latest version is `0.6.0` (2nd prototype release).  
 
 ## Demos
-First, Please print the marker below(or just view it on the phone).  
+First, Please print the marker(#6) below, or just view it on the phone.  
 <img src="./images/6wFrame.png" alt="Maker" width="226px"> 
 
-[Marker](https://tetunori.github.io/p5.simpleAR/images/6wFrame.png)
+[Marker](https://tetunori.github.io/p5.simpleAR/markers/6wFrame.png)
 
 ### Basic Demo
 
@@ -57,15 +57,14 @@ https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-
 # Usage
 ## Import
 ```html 
-<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.5.0/p5SimpleAR.js"></script>
+<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.6.0/p5SimpleAR.js"></script>
 ```
 <details><summary>In case of OpenProcessing</summary>
 <img src="./images/openprocessing-addlib.png" alt="Add library in OpenProcessing" width="480px"> 
 </details>
 
-
 ## Basic Usage
-Just replace `createCanvas` in `setup` with `createARCanvas`.
+Just replace `createCanvas` with `createARCanvas`.
 
 ```javascript
 createCanvas(100, 100);
@@ -73,7 +72,7 @@ createCanvas(100, 100);
 createARCanvas(100, 100);
 ```
 OK, done.  
-Then, your sketch will be shown on the [AR Marker](https://tetunori.github.io/p5.simpleAR/images/6wFrame.png).
+Then, your sketch will be shown on the [AR Marker](https://tetunori.github.io/p5.simpleAR/markers/6wFrame.png).
 
 ## Environment 
 This function deeply depends on **AR.js**. Please see the [requirement](https://ar-js-org.github.io/AR.js-Docs/#requirements) of the library. 
@@ -82,39 +81,193 @@ This function deeply depends on **AR.js**. Please see the [requirement](https://
 <details><summary>CLICK ME</summary>
 <p>
 
+## Markers
+We can choose markers from the 64 images below.  
+[AR Markers](https://github.com/tetunori/p5.simpleAR/tree/main/markers/) 
+
+|  0  |  1  |  ...  |  63  |
+| ---- | ---- | ---- | ---- |
+| <img src="./images/0wFrame.png" alt="Maker" width="113px"> | <img src="./images/1wFrame.png" alt="Maker" width="113px"> |  ...  |  <img src="./images/63wFrame.png" alt="Maker" width="113px"> |
+
 ## createARCanvas
+
 ```javascript
 createARCanvas(w, h, [renderer], [params])
 ```
-Replace `createCanvas` in `setup` with this function.  
-So, basically, this has same parameters as `createCanvas`.  
+
+Replace `createCanvas` with this function.  
+So, basically, this API has same parameters as `createCanvas`.  
 > **Warning**  
 > AR function does not work well in `WEBGL` mode...
 
-`params` is original `Object` parameters for p5.simpleAR.  
-Properties:
+`params` is original `Object` parameters for `p5.simpleAR`.  
+### Properties:
 |  name  |  note  |
 | ---- | ---- |
-|  `scale`   | `Number`: Scale of the sketch. Marker size is defined as `1`. Default value is `3`. |
-|  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0` and `1.0`.Default value is `1.0`. |
+|  `scale`   | `Number`: Scale of the sketch. Marker(3x3 dots) size is defined as `1`. Default value is `3`. |
+|  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0` and `1.0`. Default value is `1.0`. |
+|  `markerId`   | `Number`: Id of the marker data. Input a integer value between `0` and `63`. Default value is `6`. |
 
 ```javascript
 // Call like this
 // createCanvas(100, 200);
-createARCanvas(100, 200, P2D, {scale: 5});
+createARCanvas(100, 200, P2D, { scale: 5, opacity: 0.7, markerId: 1 });
 ```
+
+### Sample
+- createARCanvas Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/parameters/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/parameters/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1898838)
+- つぶやきProcessing Demo
+  - [Demo On GitHub](https://tetunori.github.io/p5.simpleAR/sample/tsubuyaki/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/tsubuyaki/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899101)
+
+## createARGraphics
+
+```javascript
+createARGraphics(w, h, [renderer], [params])
+```
+
+Replace `createGraphics` with this function.  
+So, basically, this API has same parameters as `createGraphics`.  
+By using this API, You can handle multiple markers. 
+> **Warning**  
+> AR function does not work well in `WEBGL` mode...
+
+> **Warning**  
+> `createARGraphics` and `createARCanvas` cannot coexist.
+
+`params` is original `Object` parameters for `p5.simpleAR`.  
+### Properties:
+|  name  |  note  |
+| ---- | ---- |
+|  `scale`   | `Number`: Scale of the sketch. Marker(3x3 dots) size is defined as `1`. Default value is `3`. |
+|  `opacity`   | `Number`: Opacity of the sketch. Input a value between `0.0` and `1.0`. Default value is `1.0`. |
+|  `markerId`   | `Number`: Id of the marker data. Input a integer value between `0` and `63`. Default value is `6`. Be sure to set unique id for each graphics. |
+
+```javascript
+// Call like this
+// createGraphics(100, 200);
+createARGraphics(100, 200, P2D, { scale: 5, opacity: 0.7, markerId: 1 });
+```
+
+### Sample
+- createARGraphics Multi Marker Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/createARGraphics/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/createARGraphics/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1898840)
+
+## p5SimpleARGetMarkerProperty
+```javascript
+p5SimpleARGetMarkerProperty([markerId])
+```
+Return a `Object` that has some information on the specified marker.
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the marker data. If you do not specify this, default value `6` will be set. |
+
+### Return Object Property:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the specified marker data. |
+|  `markerVisible`   | `Boolean`: Whether the specified marker is visible or not. |
+|  `rotation`   | `Object`: Rotation information of the marker. Value format(radians/degrees) depends on the p5.js angle-mode setting(see [angleMode()](https://p5js.org/reference/#/p5/angleMode)). <br> **Property:**<br>x: Pitch, rotation about the X-axis.<br>y: Yaw, rotation about the Y-axis.	<br>z: Roll, rotation about the Z-axis. |
+|  `position`   | `Object`: Position information of the marker. This uses a right-handed coordinate system where the negative Z axis extends into the screen. <br> **Property:**<br>x: Negative X axis extends left. Positive X Axis extends right.<br>y: Negative Y axis extends down. Positive Y Axis extends up.	<br>z: Negative Z axis extends in. Positive Z Axis extends out. |
+
+```javascript
+const markerProps = p5SimpleARGetMarkerProperty(6);
+```
+Received `Object` consists of objects as below.
+
+```javascript
+// Return value of p5SimpleARGetMarkerProperty() with angleMode 'DEGREES'
+{
+  markerId: 6,
+  markerVisible: true,
+  rotation: {
+    x: 105.35504555645193, 
+    y: -11.201540264006956, 
+    z: 14.797999140808324,
+  },
+  position: {
+    x: -0.2322715400514963, 
+    y: 0.956252183544887, 
+    z: -12.228084209054696,
+  }
+}
+```
+
+### Sample
+- Simple GetMarkerProperty Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/getMarkerProperty/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/getMarkerProperty/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899122)
+
+- Position/Rotation Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/propPosRot/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/propPosRot/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899120)
+
+## p5SimpleARMarkerFound
+```javascript
+p5SimpleARMarkerFound([markerId])
+```
+The `p5SimpleARMarkerFound` function is called once when a specified marker has been found.
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the found marker. |
+
+```javascript
+// Overwrite like below.
+function p5SimpleARMarkerFound(markerId) {
+  console.log('p5SimpleARMarkerFound: ' + markerId);
+}
+```
+
+### Sample
+- Found/Lost callback Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/getMarkerProperty/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/getMarkerProperty/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899122)
+
+## p5SimpleARMarkerLost
+```javascript
+p5SimpleARMarkerLost([markerId])
+```
+The `p5SimpleARMarkerLost` function is called once when a specified marker has been lost.
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the lost marker. |
+
+```javascript
+// Overwrite like below.
+function p5SimpleARMarkerLost(markerId) {
+  console.log('p5SimpleARMarkerLost: ' + markerId);
+}
+```
+
+### Sample
+- Found/Lost callback Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/foundLost/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/foundLost/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899233)
 
 </p>
 </details>
 
-# ToDo
-- Specify some parameters on AR setting
-- Pinch to zoom in and out
-- Support multiple types of markers
-- Use specified image as a marker (possible?)
-- Improve Performance 
+# Tips✍
+## Improve Performance🚀
+- Use smaller canvas for smart phone. Around 240 is the recommended value for width/height. 
 
-# License
+# ToDo✅
+- [x] Specify some parameters on AR setting
+- [ ] Pinch to zoom in and out
+- [x] Support multiple types of markers
+- [ ] Use specified image as a marker (possible?)
+- [x] Improve Performance 
+
+# License⚖
 MIT license  
 Copyright (c) 2023 [Tetsunori Nakayama](https://twitter.com/tetunori_lego).
 
