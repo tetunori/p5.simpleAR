@@ -87,7 +87,7 @@ We can choose markers from the 64 images below.
 
 |  0  |  1  |  ...  |  63  |
 | ---- | ---- | ---- | ---- |
-| <img src="./images/0wFrame.png" alt="Maker" width="113px"> | <img src="./images/1wFrame.png" alt="Maker" width="113px"> |  ...  |  <img src="./images/63wFrame.png" alt="Maker" width="113px"> |
+| <img src="./markers/0wFrame.png" alt="Maker" width="113px"> | <img src="./markers/1wFrame.png" alt="Maker" width="113px"> |  ...  |  <img src="./markers/63wFrame.png" alt="Maker" width="113px"> |
 
 ## createARCanvas
 
