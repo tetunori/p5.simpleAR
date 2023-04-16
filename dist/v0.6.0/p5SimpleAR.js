@@ -131,9 +131,9 @@ const p5SimpleARGetMarkerProperty = (markerId = 6) => {
 
   const rotObj = document.querySelector('#a-marker' + String(markerId)).getAttribute('rotation');
   returnObj.rotation = {
-    x: rotObj.x,
-    y: rotObj.y,
-    z: rotObj.z,
+    x: angleMode() === RADIANS ? radians(rotObj.x) : rotObj.x,
+    y: angleMode() === RADIANS ? radians(rotObj.y) : rotObj.y,
+    z: angleMode() === RADIANS ? radians(rotObj.z) : rotObj.z,
   };
 
   const posObj = document.querySelector('#a-marker' + String(markerId)).getAttribute('position');
@@ -170,11 +170,11 @@ const p5SimpleARReplaceARDraw = () => {
 };
 
 // For overwrite
-function p5SimpleARMarkerFound(markerId = undefined) {
+function p5SimpleARMarkerFound(markerId) {
   // no op
 }
 
 // For overwrite
-function p5SimpleARMarkerLost(markerId = undefined) {
+function p5SimpleARMarkerLost(markerId) {
   // no op
 }

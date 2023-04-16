@@ -24,8 +24,8 @@ function draw() {
   }
   fill(cols[index]);
 
-  const rot = constrain(props.rotation.y, -90, 90);
-  const circleSize = map(rot, -90, 90, W / 10, W);
+  const rot = constrain(props.rotation.y, -PI/2, PI/2);
+  const circleSize = map(rot, -PI/2, PI/2, W / 10, W);
   circle(W / 2, W / 2, circleSize);
 }
 
