@@ -148,7 +148,7 @@ createARGraphics(100, 200, P2D, { scale: 5, opacity: 0.7, markerId: 1 });
 ```
 
 ### Sample
-- createARGraphics Demo
+- createARGraphics Multi Marker Demo
   - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/createARGraphics/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/createARGraphics/)
   - [On OpenProcessing](https://openprocessing.org/sketch/1898840)
 
@@ -203,6 +203,55 @@ Received `Object` consists of objects as below.
   - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/propPosRot/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/propPosRot/)
   - [On OpenProcessing](https://openprocessing.org/sketch/1899120)
 
+## p5SimpleARMarkerFound
+```javascript
+p5SimpleARMarkerFound([markerId])
+```
+The `p5SimpleARMarkerFound` function is called once when a specified marker has been found.
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the found marker. |
+
+```javascript
+// Overwrite like below.
+function p5SimpleARMarkerFound(markerId) {
+  console.log('p5SimpleARMarkerFound: ' + markerId);
+}
+
+function p5SimpleARMarkerLost(markerId) {
+  console.log('p5SimpleARMarkerLost: ' + markerId);
+}
+```
+
+### Sample
+- Found/Lost callback Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/getMarkerProperty/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/getMarkerProperty/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899122)
+
+## p5SimpleARMarkerLost
+```javascript
+p5SimpleARMarkerLost([markerId])
+```
+The `p5SimpleARMarkerLost` function is called once when a specified marker has been lost.
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `markerId`   | `Number`: Id of the lost marker. |
+
+```javascript
+// Overwrite like below.
+function p5SimpleARMarkerLost(markerId) {
+  console.log('p5SimpleARMarkerLost: ' + markerId);
+}
+```
+
+### Sample
+- Found/Lost callback Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/foundLost/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/foundLost/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899233)
 
 </p>
 </details>
