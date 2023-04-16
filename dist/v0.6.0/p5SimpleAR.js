@@ -155,6 +155,11 @@ const p5SimpleARReplaceARDraw = () => {
   }
   p5SimpleARDrawReplaced = true;
 
+  // For Openprocessing
+  if (document.body.style.display === 'flex') {
+    document.body.style.display = '';
+  }
+
   const oldDraw = draw;
   draw = () => {
     oldDraw();
