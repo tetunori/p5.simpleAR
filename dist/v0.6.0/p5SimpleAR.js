@@ -156,9 +156,9 @@ const p5SimpleARReplaceARDraw = () => {
   p5SimpleARDrawReplaced = true;
 
   // For Openprocessing
-  const targetElm = document.body; 
-  if (targetElm.class.match(/hasFrameBorder/) ) {
-    targetElm.class = '';
+  const targetElm = document.body;
+  if (targetElm.className.match(/hasFrameBorder/)) {
+    targetElm.className = '';
   }
   console.log(targetElm);
 
