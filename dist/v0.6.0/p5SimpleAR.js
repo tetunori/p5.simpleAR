@@ -157,10 +157,10 @@ const p5SimpleARReplaceARDraw = () => {
 
   // For Openprocessing
   const targetElm = document.body; 
-  console.log(targetElm, targetElm?.style);
-  // if (targetElm.style.display === 'flex') {
-  //   targetElm.style.display = '';
-  // }
+  if (targetElm.class.match(/hasFrameBorder/) ) {
+    targetElm.class = '';
+  }
+  console.log(targetElm);
 
   const oldDraw = draw;
   draw = () => {
