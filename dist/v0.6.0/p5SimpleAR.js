@@ -160,7 +160,6 @@ const p5SimpleARReplaceARDraw = () => {
   if (targetElm.className.match(/hasFrameBorder/)) {
     targetElm.className = '';
   }
-  console.log(targetElm);
 
   const oldDraw = draw;
   draw = () => {
