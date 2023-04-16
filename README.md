@@ -5,6 +5,12 @@
 [Concept movie.](https://youtu.be/I2mgpdLRX3g)
 
 Now, the latest version is `0.6.0` (2nd prototype release).  
+**New Features in `0.6.0`.**
+- Marker id can be specified.
+- Support つぶやきProcessing sketches(`createARCanvas` can be called multiply.)
+- `createARGraphics` enables us to use multiple markers simultaneously.
+- Marker rotation and position info can be got.
+- Add marker-found/lost event callback.
 
 ## Demos
 First, Please print the marker(#6) below, or just view it on the phone.  
@@ -86,7 +92,7 @@ We can choose markers from the 64 images below.
 [AR Markers](https://github.com/tetunori/p5.simpleAR/tree/main/markers/) 
 
 |  0  |  1  |  ...  |  63  |
-| ---- | ---- | ---- | ---- |
+| :---: | :---: | :---: | :---: |
 | <img src="./markers/0wFrame.png" alt="Maker" width="113px"> | <img src="./markers/1wFrame.png" alt="Maker" width="113px"> |  ...  |  <img src="./markers/63wFrame.png" alt="Maker" width="113px"> |
 
 ## createARCanvas
@@ -100,7 +106,7 @@ So, basically, this API has same parameters as `createCanvas`.
 > **Warning**  
 > AR function does not work well in `WEBGL` mode...
 
-`params` is original `Object` parameters for `p5.simpleAR`.  
+`params` is an original `Object` parameter for `p5.simpleAR`.  
 ### Properties:
 |  name  |  note  |
 | ---- | ---- |
@@ -137,7 +143,7 @@ By using this API, You can handle multiple markers.
 > **Warning**  
 > `createARGraphics` and `createARCanvas` cannot coexist.
 
-`params` is original `Object` parameters for `p5.simpleAR`.  
+`params` is an original `Object` parameter for `p5.simpleAR`.  
 ### Properties:
 |  name  |  note  |
 | ---- | ---- |
@@ -227,8 +233,8 @@ function p5SimpleARMarkerFound(markerId) {
 
 ### Sample
 - Found/Lost callback Demo
-  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/getMarkerProperty/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/getMarkerProperty/)
-  - [On OpenProcessing](https://openprocessing.org/sketch/1899122)
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/foundLost/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/foundLost/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1899233)
 
 ## p5SimpleARMarkerLost
 ```javascript
@@ -237,6 +243,7 @@ p5SimpleARMarkerLost([markerId])
 The `p5SimpleARMarkerLost` function is called once when a specified marker has been lost.
 
 ### Parameter:
+
 |  name  |  note  |
 | ---- | ---- |
 |  `markerId`   | `Number`: Id of the lost marker. |
@@ -258,7 +265,7 @@ function p5SimpleARMarkerLost(markerId) {
 
 # Tips✍
 ## Improve Performance🚀
-- Use smaller canvas for smart phone. Around 240 is the recommended value for width/height. 
+- Use smaller canvas for smart phones. Around 240 is a recommended value for width/height. 
 
 # ToDo✅
 - [x] Specify some parameters on AR setting
