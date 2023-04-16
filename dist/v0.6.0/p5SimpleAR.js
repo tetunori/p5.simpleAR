@@ -156,10 +156,11 @@ const p5SimpleARReplaceARDraw = () => {
   p5SimpleARDrawReplaced = true;
 
   // For Openprocessing
-  const targetElm = document.querySelector('[name^="sketchIframe"]').contentWindow.document.body; 
-  if (targetElm.style.display === 'flex') {
-    targetElm.style.display = '';
-  }
+  const targetElm = document.body; 
+  console.log(targetElm, targetElm?.style);
+  // if (targetElm.style.display === 'flex') {
+  //   targetElm.style.display = '';
+  // }
 
   const oldDraw = draw;
   draw = () => {
