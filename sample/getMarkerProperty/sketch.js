@@ -20,11 +20,3 @@ function mouseClicked() {
   console.log(p5SimpleARGetMarkerProperty());
   // console.log(p5SimpleARGetMarkerProperty(1));
 }
-
-function p5SimpleARMarkerFound(markerId) {
-  console.log('p5SimpleARMarkerFound: ' + markerId);
-}
-
-function p5SimpleARMarkerLost(markerId) {
-  console.log('p5SimpleARMarkerLost: ' + markerId);
-}
