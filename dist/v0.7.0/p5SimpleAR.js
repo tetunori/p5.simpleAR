@@ -5,12 +5,18 @@ aFrameScript.onload = () => {
   const arJSScript = document.createElement('script');
   arJSScript.src = 'https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js';
   arJSScript.onload = () => {
-    document.body.innerHTML += `
-    <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    // touch gesture
+    const gestureScript = document.createElement('script');
+    gestureScript.src = 'https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js';
+    gestureScript.onload = () => {
+      document.body.innerHTML += `
+    <a-scene embedded vr-mode-ui="enabled: false;" gesture-detector arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
       <a-assets id="a-assets"></a-assets>
       <a-entity camera></a-entity>
     </a-scene>
       `;
+    };
+    document.head.appendChild(gestureScript);
   };
   document.head.appendChild(arJSScript);
 };
@@ -64,6 +70,7 @@ const p5SimpleARCreateARCore = (w, h, cvs, params = { scale: 3, opacity: 1.0, ma
       ['rotation', '-90 0 0'],
       ['width', String(arW)],
       ['height', String(arH)],
+      ['gesture-handler', 'minScale: 0.25; maxScale: 3'],
       [
         'material',
         'src: #p5Canvas' +
