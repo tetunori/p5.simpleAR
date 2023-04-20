@@ -10,7 +10,7 @@ aFrameScript.onload = () => {
     gestureScript.src = 'https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js';
     gestureScript.onload = () => {
       document.body.innerHTML += `
-    <a-scene embedded vr-mode-ui="enabled: false;" gesture-detector arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
       <a-assets id="a-assets"></a-assets>
       <a-entity camera></a-entity>
     </a-scene>
@@ -151,6 +151,21 @@ const p5SimpleARGetMarkerProperty = (markerId = 6) => {
   };
 
   return returnObj;
+};
+
+// Set/Remove touch gesture function
+const p5SimpleAREnableGesture = (bEnable = true) => {
+  const scene = document.querySelector('a-scene');
+  const gestureAtt = 'gesture-detector';
+
+  if (!bEnable) {
+    scene.removeAttribute(gestureAtt);
+  } else {
+    if (!scene.hasAttribute(gestureAtt)) {
+      scene.setAttribute(gestureAtt, '');
+    }
+  }
+
 };
 
 // Replace draw function
