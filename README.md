@@ -4,7 +4,10 @@
 <a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="KeyVisual" width="640px"></a>  
 [Concept movie.](https://youtu.be/I2mgpdLRX3g)
 
-Now, the latest version is `0.6.0` (2nd prototype release).  
+Now, the latest version is `0.6.1` (3rd prototype release).  
+**New Features in `0.6.1`.**
+- Support flick and pinch-in/out gesture.
+
 **New Features in `0.6.0`.**
 - Marker id can be specified.
 - Support つぶやきProcessing sketches(`createARCanvas` can be called multiply.)
@@ -63,7 +66,7 @@ https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-
 # Usage
 ## Import
 ```html 
-<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.6.0/p5SimpleAR.js"></script>
+<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.6.1/p5SimpleAR.js"></script>
 ```
 <details><summary>In case of OpenProcessing</summary>
 <img src="./images/openprocessing-addlib.png" alt="Add library in OpenProcessing" width="480px"> 
@@ -213,6 +216,26 @@ Received `Object` consists of objects as below.
   - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/propPosRot/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/propPosRot/)
   - [On OpenProcessing](https://openprocessing.org/sketch/1899120)
 
+## p5SimpleAREnableGesture
+```javascript
+p5SimpleAREnableGesture([bEnable])
+```
+Enable/disalbe flick and pinch-in/out gesture to rotate or zoom-in/out.
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `bEnable`   | `Boolean`: Specify enable(`true`) or disable(`false`). |
+
+```javascript
+p5SimpleAREnableGesture(true);
+```
+
+### Sample
+- Gesture Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/enableGesture/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/enableGesture/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1905887)
+
 ## p5SimpleARMarkerFound
 ```javascript
 p5SimpleARMarkerFound([markerId])
@@ -269,9 +292,9 @@ function p5SimpleARMarkerLost(markerId) {
 
 # ToDo✅
 - [x] Specify some parameters on AR setting
-- [ ] Pinch to zoom in and out
+- [x] Pinch to zoom in and out
 - [x] Support multiple types of markers
-- [ ] Use specified image as a marker (possible?)
+- [ ] ~~Use specified image as a marker (possible?)~~
 - [x] Improve Performance 
 
 # License⚖
