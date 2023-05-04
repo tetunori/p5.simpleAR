@@ -66,7 +66,7 @@ https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-
 # Usage
 ## Import
 ```html 
-<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.6.1/p5SimpleAR.js"></script>
+<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.7.0/p5SimpleAR.js"></script>
 ```
 <details><summary>In case of OpenProcessing</summary>
 <img src="./images/openprocessing-addlib.png" alt="Add library in OpenProcessing" width="480px"> 
