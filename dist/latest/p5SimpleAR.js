@@ -67,7 +67,6 @@ const p5SimpleARCreateARCore = (w, h, cvs, params = { scale: 3, opacity: 1.0, ma
     }
     const atts = [
       ['position', '0 0 0'],
-      ['rotation', '-90 0 0'],
       ['width', String(arW)],
       ['height', String(arH)],
       ['gesture-handler', 'minScale: 0.25; maxScale: 3'],
@@ -83,6 +82,7 @@ const p5SimpleARCreateARCore = (w, h, cvs, params = { scale: 3, opacity: 1.0, ma
     const plane = document.createElement('a-plane');
     plane.id = 'p5SimpleAR-plane' + String(params.markerId);
     atts.forEach((att) => plane.setAttribute(att[0], att[1]));
+    plane.object3D.rotation.set(-PI / 2, 0, 0);
 
     const scene = document.querySelector('a-scene');
     const marker = document.createElement('a-marker');
@@ -153,6 +153,32 @@ const p5SimpleARGetMarkerProperty = (markerId = 6) => {
   return returnObj;
 };
 
+const p5SimpleARSetARProperty = (prop, markerId = 6) => {
+  const plane = document.querySelector('#p5SimpleAR-plane' + String(markerId));
+
+  if (prop && prop.rotation) {
+    const rot = prop.rotation;
+
+    if (angleMode() === DEGREES) {
+      rot.x = radians(rot.x);
+      rot.y = radians(rot.y);
+      rot.z = radians(rot.z);
+    }
+    if (!rot.order) {
+      rot.order = 'XYZ';
+    }
+    plane.object3D.rotation.set(rot.x, rot.y, rot.z, rot.order);
+  }
+
+  if (prop && prop.position) {
+    const pos = prop.position;
+    plane.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
+  }
+
+  // console.log(plane.getAttribute('rotation'), plane.getAttribute('position'));
+  // console.log(plane.getAttribute('rotation'), plane.getAttribute('position'));
+};
+
 // Set/Remove touch gesture function
 const p5SimpleAREnableGesture = (bEnable = true) => {
   const scene = document.querySelector('a-scene');
@@ -165,7 +191,6 @@ const p5SimpleAREnableGesture = (bEnable = true) => {
       scene.setAttribute(gestureAtt, '');
     }
   }
-
 };
 
 // Replace draw function
