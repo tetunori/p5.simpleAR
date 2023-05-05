@@ -172,11 +172,8 @@ const p5SimpleARSetARProperty = (prop, markerId = 6) => {
 
   if (prop && prop.position) {
     const pos = prop.position;
-    plane.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
+    plane.object3D.position.set(pos.x, pos.y, pos.z);
   }
-
-  // console.log(plane.getAttribute('rotation'), plane.getAttribute('position'));
-  // console.log(plane.getAttribute('rotation'), plane.getAttribute('position'));
 };
 
 // Set/Remove touch gesture function
