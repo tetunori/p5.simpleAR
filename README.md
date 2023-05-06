@@ -4,9 +4,20 @@
 <a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="KeyVisual" width="640px"></a>  
 [Concept movie.](https://youtu.be/I2mgpdLRX3g)
 
-Now, the latest version is `0.6.1` (3rd prototype release).  
+Now, the latest version is `0.7.0` (beta release).  
+  
+<details><summary>CLICK ME to show updates in detail</summary>
+**New Features in `0.7.0`.**
+- Support setting AR properties(position and rotation).
+
+<a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="0.7.0 features" width="320px"></a>  
+[0.7.0 features movie.](https://youtu.be/I2mgpdLRX3g)
+
 **New Features in `0.6.1`.**
 - Support flick and pinch-in/out gesture.
+
+<a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="0.7.0 features" width="320px"></a>  
+[0.7.0 features movie.](https://youtu.be/I2mgpdLRX3g)
 
 **New Features in `0.6.0`.**
 - Marker id can be specified.
@@ -14,6 +25,10 @@ Now, the latest version is `0.6.1` (3rd prototype release).
 - `createARGraphics` enables us to use multiple markers simultaneously.
 - Marker rotation and position info can be got.
 - Add marker-found/lost event callback.
+
+<a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="0.7.0 features" width="320px"></a>  
+[0.7.0 features movie.](https://youtu.be/I2mgpdLRX3g)
+</details>
 
 ## Demos
 First, Please print the marker(#6) below, or just view it on the phone.  
@@ -66,7 +81,7 @@ https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-
 # Usage
 ## Import
 ```html 
-<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.6.1/p5SimpleAR.js"></script>
+<script src="https://tetunori.github.io/p5.simpleAR/dist/v0.7.0/p5SimpleAR.js"></script>
 ```
 <details><summary>In case of OpenProcessing</summary>
 <img src="./images/openprocessing-addlib.png" alt="Add library in OpenProcessing" width="480px"> 
@@ -215,6 +230,87 @@ Received `Object` consists of objects as below.
 - Position/Rotation Demo
   - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/propPosRot/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/propPosRot/)
   - [On OpenProcessing](https://openprocessing.org/sketch/1899120)
+
+## p5SimpleARSetARProperty
+```javascript
+p5SimpleARSetARProperty(prop, [markerId])
+```
+Set AR poperties(rotation and position).
+
+### Parameter:
+|  name  |  note  |
+| ---- | ---- |
+|  `prop`   | `Object`: AR Properties to be set. See the table below in detail. |
+|  `markerId`   | `Number`: Id of the marker data. If you do not specify this, default value `6` will be set. |
+
+#### `prop` Properties:
+|  name  |  note  |
+| ---- | ---- |
+|  `rotation`   | `Object`: Rotation information of the AR canvas. Value format(radians/degrees) depends on the p5.js angle-mode setting(see [angleMode()](https://p5js.org/reference/#/p5/angleMode)). <br> **Property:**<br>x: rotation about the X-axis.<br>y: rotation about the Y-axis.	<br>z: rotation about the Z-axis.	 <br>order: rotation order default value is `'XYZ'`. |
+|  `position`   | `Object`: Position information of the AR canvas.  <br> **Property:**<br>x: translation in the X-axis direction.<br>y: translation in the Y-axis direction.	<br>z: translation in the Z-axis direction. |
+
+```javascript
+const arProps = {
+  rotation: {
+    x: PI/4,
+    y: 0,
+    z: -PI/2,
+    order: 'ZYX',
+  },
+  position: {
+    x: 0,
+    y: 1,
+    z: 2,
+  },
+};
+
+p5SimpleARSetARProperty(arProps);
+```
+
+Combined with `p5SimpleARGetMarkerProperty()`, we can make use of existing 3D `p5.js` sketches as it is.  
+```javascript
+// Get current marker poperty
+const markerProps = p5SimpleARGetMarkerProperty();
+
+// AR properties
+const arProps = {
+  // Rotate canvas so that it always faces the camera.
+  // Default rotation order is 'XYZ' so we should use 'ZYX' to get back.
+  rotation: {
+    x: -markerProps.rotation.x,
+    y: -markerProps.rotation.y,
+    z: -markerProps.rotation.z,
+    order: 'ZYX',
+  },
+  position: {
+    x: 0,
+    y: 1,
+    z: 0,
+  },
+};
+p5SimpleARSetARProperty(arProps);
+
+// Rotate objects in canvas
+rotateX(PI - markerProps.rotation.x);
+rotateY(PI - markerProps.rotation.y);
+rotateZ(PI - markerProps.rotation.z);
+
+// draw!
+box(70);
+```
+
+### Sample
+- Simple SetARProperty Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/setARProperty/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/setARProperty/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1920131)
+
+- Floating box Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/floatingBox/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/floatingBox/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1920132)
+
+- BMWalker Demo
+  - [On GitHub](https://tetunori.github.io/p5.simpleAR/sample/bmwalker/index.html), [Source code On GitHub](https://github.com/tetunori/p5.simpleAR/tree/main/sample/bmwalker/)
+  - [On OpenProcessing](https://openprocessing.org/sketch/1920133)
 
 ## p5SimpleAREnableGesture
 ```javascript
