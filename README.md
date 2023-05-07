@@ -10,14 +10,14 @@ Now, the latest version is `0.7.0` (beta release).
 **New Features in `0.7.0`.**
 - Support setting AR properties(position and rotation).
 
-<a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="0.7.0 features" width="320px"></a>  
-[0.7.0 features movie.](https://youtu.be/I2mgpdLRX3g)
+<a href="https://youtu.be/zTTUR7rV4xc"><img src="http://img.youtube.com/vi/zTTUR7rV4xc/sddefault.jpg" alt="0.7.0 features" width="320px"></a>  
+[0.7.0 features movie.](https://youtu.be/zTTUR7rV4xc)
 
 **New Features in `0.6.1`.**
 - Support flick and pinch-in/out gesture.
 
-<a href="https://youtu.be/I2mgpdLRX3g"><img src="http://img.youtube.com/vi/DhBOJwgIOP0/maxresdefault.jpg" alt="0.6.1 features" width="320px"></a>  
-[0.6.1features movie.](https://youtu.be/I2mgpdLRX3g)
+<a href="https://youtu.be/ZlkeMeXEQfc"><img src="http://img.youtube.com/vi/ZlkeMeXEQfc/sddefault.jpg" alt="0.6.1 features" width="320px"></a>  
+[0.6.1 features movie.](https://youtu.be/ZlkeMeXEQfc)
 
 **New Features in `0.6.0`.**
 - Marker id can be specified.
@@ -26,8 +26,9 @@ Now, the latest version is `0.7.0` (beta release).
 - Marker rotation and position info can be got.
 - Add marker-found/lost event callback.
 
-<a href="https://youtu.be/DhBOJwgIOP0"><img src="./images/keyvisual.png" alt="0.6.0 features" width="320px"></a>  
-[0.6.0 features movie.](https://youtu.be/DhBOJwgIOP0)
+<a href="https://youtu.be/I2mgpdLRX3g"><img src="http://img.youtube.com/vi/DhBOJwgIOP0/maxresdefault.jpg" alt="0.6.0 features" width="320px"></a>  
+[0.6.0 features movie.](https://youtu.be/I2mgpdLRX3g)
+
 </details>
 
 ## Demos
@@ -75,6 +76,23 @@ Original sketch by [@deconbatch](https://twitter.com/deconbatch)
 ##### [Game of Life on WebAR](https://openprocessing.org/sketch/1891716)  
 
 https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-bdb7-07e176d5e0d0.mp4
+
+
+#### Multi Marker
+##### [createARGraphics demo](https://openprocessing.org/sketch/1898840)
+
+<img src="./images/multiMarker.png" alt="createARGraphics demo" width="640px"><br>
+
+#### 3D properties
+##### [Floating box Demo](https://openprocessing.org/sketch/1920132)
+
+<img src="./images/floatingBox.png" alt="Floating box Demo" width="320px"><br>
+
+#### Gesture
+##### [Gesture Demo](https://openprocessing.org/sketch/1905887)
+
+<img src="./images/pinchGesture.png" alt="Gesture Demo" width="640px"><br>
+
 
 </details>
 
