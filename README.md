@@ -7,6 +7,7 @@
 Now, the latest version is `0.7.0` (beta release).  
   
 <details><summary>CLICK ME to show updates in detail</summary>
+
 **New Features in `0.7.0`.**
 - Support setting AR properties(position and rotation).
 
@@ -26,8 +27,8 @@ Now, the latest version is `0.7.0` (beta release).
 - Marker rotation and position info can be got.
 - Add marker-found/lost event callback.
 
-<a href="https://youtu.be/I2mgpdLRX3g"><img src="http://img.youtube.com/vi/DhBOJwgIOP0/maxresdefault.jpg" alt="0.6.0 features" width="320px"></a>  
-[0.6.0 features movie.](https://youtu.be/I2mgpdLRX3g)
+<a href="https://youtu.be/DhBOJwgIOP0"><img src="http://img.youtube.com/vi/DhBOJwgIOP0/maxresdefault.jpg" alt="0.6.0 features" width="320px"></a>  
+[0.6.0 features movie.](https://youtu.be/DhBOJwgIOP0)
 
 </details>
 
@@ -69,7 +70,7 @@ Original sketch by [@deconbatch](https://twitter.com/deconbatch)
 #### Transparent background
 ##### [Generativemasks on WebAR](https://openprocessing.org/sketch/1891862)
 
-<img src="./images/Generativemasks.png" alt="Transparent background Demo" width="640px"><br>
+<a href="https://openprocessing.org/sketch/1891862"><img src="./images/Generativemasks.png" alt="Transparent background Demo" width="640px"></a><br>
 [Generativemasks](https://generativemasks.io/) by [@takawo](https://twitter.com/takawo), [Garg library](https://jp.deconbatch.com/2021/10/garg.html) by [@deconbatch](https://twitter.com/deconbatch)
 
 #### Non-square canvas(800*80)
@@ -81,18 +82,17 @@ https://user-images.githubusercontent.com/14086390/230766289-28826124-1bbd-400a-
 #### Multi Marker
 ##### [createARGraphics demo](https://openprocessing.org/sketch/1898840)
 
-<img src="./images/multiMarker.png" alt="createARGraphics demo" width="640px"><br>
+<a href="https://openprocessing.org/sketch/1898840"><img src="./images/multiMarker.png" alt="createARGraphics demo" width="640px"></a><br>
 
 #### 3D properties
 ##### [Floating box Demo](https://openprocessing.org/sketch/1920132)
 
-<img src="./images/floatingBox.png" alt="Floating box Demo" width="320px"><br>
+<a href="https://openprocessing.org/sketch/1920132"><img src="./images/floatingBox.png" alt="Floating box Demo" width="320px"></a><br>
 
 #### Gesture
 ##### [Gesture Demo](https://openprocessing.org/sketch/1905887)
 
-<img src="./images/pinchGesture.png" alt="Gesture Demo" width="640px"><br>
-
+<a href="https://openprocessing.org/sketch/1905887"><img src="./images/pinchGesture.png" alt="Gesture Demo" width="640px"></a><br>
 
 </details>
 
