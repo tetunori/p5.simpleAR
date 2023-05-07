@@ -1,8 +1,7 @@
 const W = 240;
 
 function setup() {
-  createARCanvas(W, W, WEBGL);
-  normalMaterial();
+  createARCanvas(W, W);
 
   // Prepare GUI
   prepareDatGUI();
@@ -29,5 +28,5 @@ function draw() {
     // For debug usage
     background(255, 220);
   }
-  box(70);
+  square(width / 2 - 35, height / 2 - 35, 70);
 }
