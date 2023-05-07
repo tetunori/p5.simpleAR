@@ -404,6 +404,9 @@ function p5SimpleARMarkerLost(markerId) {
 ## Improve Performance🚀
 - Use smaller canvas for smart phones. Around 240 is a recommended value for width/height. 
 
+## Use `dat.GUI`
+- If you use `dat.GUI`, please `new dat.GUI` after completion of loading this tool. Otherwise you will not be able to use it correctly. So, it is recommended to do it in the `setup()` function. See [this sample](https://tetunori.github.io/p5.simpleAR/sample/setARProperty/index.html) and [this source](https://github.com/tetunori/p5.simpleAR/blob/main/sample/setARProperty/gui.js) for example.
+
 # ToDo✅
 - [x] Specify some parameters on AR setting
 - [x] Pinch to zoom in and out
