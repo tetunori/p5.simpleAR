@@ -16,8 +16,8 @@ Now, the latest version is `0.7.0` (beta release).
 **New Features in `0.6.1`.**
 - Support flick and pinch-in/out gesture.
 
-<a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="0.7.0 features" width="320px"></a>  
-[0.7.0 features movie.](https://youtu.be/I2mgpdLRX3g)
+<a href="https://youtu.be/I2mgpdLRX3g"><img src="http://img.youtube.com/vi/DhBOJwgIOP0/maxresdefault.jpg" alt="0.6.1 features" width="320px"></a>  
+[0.6.1features movie.](https://youtu.be/I2mgpdLRX3g)
 
 **New Features in `0.6.0`.**
 - Marker id can be specified.
@@ -26,8 +26,8 @@ Now, the latest version is `0.7.0` (beta release).
 - Marker rotation and position info can be got.
 - Add marker-found/lost event callback.
 
-<a href="https://youtu.be/I2mgpdLRX3g"><img src="./images/keyvisual.png" alt="0.7.0 features" width="320px"></a>  
-[0.7.0 features movie.](https://youtu.be/I2mgpdLRX3g)
+<a href="https://youtu.be/DhBOJwgIOP0"><img src="./images/keyvisual.png" alt="0.6.0 features" width="320px"></a>  
+[0.6.0 features movie.](https://youtu.be/DhBOJwgIOP0)
 </details>
 
 ## Demos
